@@ -1,5 +1,8 @@
 # Sysinfo
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5871d1a5c2b749e4b626c0c6e91afd03)](https://www.codacy.com/gh/koviubi56/sysinfo/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=koviubi56/sysinfo&amp;utm_campaign=Badge_Grade)
+[![CodeFactor](https://www.codefactor.io/repository/github/koviubi56/sysinfo/badge)](https://www.codefactor.io/repository/github/koviubi56/sysinfo)
+
 Sysinfo files print information about the system
 
 ## Download
