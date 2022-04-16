@@ -1,4 +1,5 @@
-# grabsysinfo.sh - A simple menu driven shell script to to get information about your 
+#!/bin/bash
+# grabsysinfo.sh - A simple menu driven shell script to to get information about your
 # Linux server / desktop.
 # Author: Vivek Gite
 # Date: 12/Sep/2007
@@ -78,35 +79,35 @@ function net_info(){
 	echo "**************************************"
 	netstat -i
 
-	pause 
+	pause
 }
 
-# Purpose - Display a list of users currently logged on 
-#           display a list of receltly loggged in users   
+# Purpose - Display a list of users currently logged on
+#           display a list of receltly loggged in users
 function user_info(){
 	local cmd="$1"
-	case "$cmd" in 
+	case "$cmd" in
 		who) write_header " Who is online "; who -H; pause ;;
 		last) write_header " List of last logged in users "; last ; pause ;;
-	esac 
+	esac
 }
 
 # Purpose - Display used and free memory info
 function mem_info(){
 	write_header " Free and used memory "
 	free -m
-    
+
     echo "*********************************"
 	echo "*** Virtual memory statistics ***"
     echo "*********************************"
 	vmstat
     echo "***********************************"
 	echo "*** Top 5 memory eating process ***"
-    echo "***********************************"	
-	ps auxf | sort -nr -k 4 | head -5	
+    echo "***********************************"
+	ps auxf | sort -nr -k 4 | head -5
 	pause
 }
-# Purpose - Get input via the keyboard and make a decision using case..esac 
+# Purpose - Get input via the keyboard and make a decision using case..esac
 function read_input(){
 	local c
 	read -p "Enter your choice [ 1 - 7 ] " c
@@ -118,7 +119,7 @@ function read_input(){
 		5)	user_info "last" ;;
 		6)	mem_info ;;
 		7)	echo "Bye!"; exit 0 ;;
-		*)	
+		*)
 			echo "Please select between 1 to 7 choice only."
 			pause
 	esac
