@@ -32,10 +32,9 @@ def censore_if_needed(thing: str, value: T) -> T:
     if is_secret(thing):
         if isinstance(value, str):
             return CENSORED
-        elif isinstance(value, tuple):
+        if isinstance(value, tuple):
             return tuple(CENSORED for _ in range(len(value)))
-        else:
-            raise TypeError(f'Can\'t censore "{thing}"')
+        raise TypeError(f'Can\'t censore "{thing}"')
     return value
 
 
